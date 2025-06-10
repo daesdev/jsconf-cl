@@ -1,0 +1,31 @@
+---
+import Background from '@atoms/Background.astro';
+import ListScrollX from '@molecules/ListScrollX.astro';
+const anchorsCta = [
+    {
+        href: 'javascript:void(0)',
+        text: 'Postula tu charla',
+    },
+    {
+        href: 'javascript:void(0)',
+        text: 'Hazte Sponsor',
+    },
+    {
+        href: 'https://gallery.jsconf.cl/',
+        text: 'Ver antiguas ediciones',
+    }
+]
+---
+<footer class="relative">
+    <slot name="backdrop">
+        <Background />
+    </slot>
+    <div class="w-full container mx-auto max-w-[1200px]">
+        <slot name="content">
+            <ListScrollX
+                id="anchors-cta"
+                items={anchorsCta}
+                />
+        </slot>
+    </div>
+</footer>

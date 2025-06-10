@@ -1,0 +1,26 @@
+---
+import Button from '@atoms/Button.astro';
+import Paragraph from '@atoms/Paragraph.astro';
+import Section from '@components/Section.astro';
+import HeadingSection from '@molecules/HeadSection.astro';
+
+---
+<Section class="py-5 px-10 mb-20 relative container mx-auto max-w-7xl border-[.5px] border-primary/20 bg-gradient-to-bl to-amber-50/5 from-amber-100/10 backdrop-blur-sm rounded-lg">
+    <HeadingSection
+        class="pb-4 z-20 relative" 
+        title="Nuestro propósito"
+        subtitle="Más allá de reunir comunidades"
+        paragraph=""
+    />
+    <Paragraph class="text-lg text-pretty font-light text-white mb-4">
+        <strong class="text-slate-300">Creamos un espacio donde personas, conocimiento y tecnología convergen</strong>
+        Para construir juntas y juntos un futuro más inclusivo, innovador y conectado.
+        En <span class="text-primary">JSConf Chile</span>, no se trata solo de JavaScript, sino de lo que somos capaces de lograr como comunidad.
+    </Paragraph>
+    <Button
+        class="bg-primary hover:bg-primary/80 text-black [&]:inline-flex"
+        type="anchor"
+        href={'https://legal.jsconf.cl/politica_de_privacidad/'}
+        text={'Ver Política de Privacidad'}
+        />
+</Section>

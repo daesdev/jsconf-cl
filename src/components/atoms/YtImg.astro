@@ -1,0 +1,29 @@
+---
+interface Props {
+    videoId: string;
+    title?: string;
+    class?: string;
+}
+const { videoId, title, class : className } = Astro.props;
+const ytimg = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
+const ytimgWebp = `https://i.ytimg.com/vi_webp/${videoId}/maxresdefault.webp`;
+const ytimgJpeg = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+---
+<picture class=`relative aspect-video overflow-hidden rounded-3xl ${className}`>
+    <source
+        srcset={ytimgJpeg}
+        type="image/jpeg"
+    />
+    <source
+        srcset={ytimgWebp}
+        type="image/webp"
+    />
+    <img
+        src={ytimg}
+        alt="YouTube Video Thumbnail"
+        title={title || "YouTube Video Thumbnail"}
+        loading="lazy"
+        decoding="async"
+        class="absolute w-[120%] h-[120%] object-cover object-center inset-0"
+    />
+</picture>

@@ -1,0 +1,15 @@
+---
+interface Props {
+  image: string;
+  id?: string;
+  class?: string;
+  style?: string;
+  title?: string;
+}
+const { image, id, title, class: className = '', style = '' } = Astro.props;
+---
+<h3 id={id} 
+    class=`${className.trim()} text-transparent bg-clip-text bg-cover bg-center font-extrabold z-20 text-nowrap blur-[1px] select-none transition-all`
+    style={`background-image:url('${image}')`}>
+    {title}
+</h3>

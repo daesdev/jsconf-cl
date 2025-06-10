@@ -1,0 +1,29 @@
+---
+const {class: className = '', text = '', href = '', target = '_blank', rel = 'noopener noreferrer' } = Astro.props;
+const classes = `inline-block px-2 py-px text-xs font-semibold text-white bg-dark border-[.5px] rounded-full ${className ?? 'border-primary'}`.trim();
+const isAnchor = Astro.props.href
+---
+{ isAnchor 
+? (
+    <a 
+        class={classes}
+        href={href}
+        target={target}
+        rel={rel}
+    >
+        <slot>
+            {text || 'Anchor Badge'}
+        </slot>
+        <slot name="icon" />
+    </a>
+) 
+: (
+    <span 
+        class={classes}
+    >
+        <slot>
+            Badge
+        </slot>
+        <slot name="icon" />
+    </span>
+)}

@@ -1,0 +1,62 @@
+---
+import Button from '@atoms/Button.astro';
+import List from '@components/List.astro';
+interface Anchor {
+    href: string;
+    text: string;
+}
+interface Props {
+    id?: string;
+    items: Array<Anchor>;
+}
+const { id, items = [] } = Astro.props;
+---
+<div class="flex justify-center py-4">
+    <List
+        id={id}
+        dataScrollId="anchors-cta"
+        class="inline-flex gap-1 items-center justify-center bg-amber-50/10 backdrop-blur-3xl mx-auto rounded-2xl overflow-hidden">
+        { items.map((anchor) => 
+            <li class="">
+                <Button
+                    class="hover:bg-black/80 text-white hover:text-white/90"
+                    type="anchor"
+                    href={anchor.href}
+                    text={anchor.text}
+                    />
+            </li>
+        )}
+    </List>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const $ = (selector: string) => document.querySelectorAll(selector);
+        const setStyleScroll = () => {
+            const anchorsCta = $(`[data-scroll-id="anchors-cta"]`);
+            anchorsCta && anchorsCta.forEach((el) => {
+                const parent = el.parentElement;
+                if (!parent) return;
+                /* 
+                const top = parent ? parent.getBoundingClientRect().top : 0;
+                const scrollTop = top + window.scrollY;
+                console.log('scrollTop', scrollTop); */
+                // el.setAttribute('style', `--offsetTop: ${scrollTop}px;`)
+        
+                const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                    const scrollY = window.scrollY || window.pageYOffset;
+                        el.setAttribute('style', `--offsetTop: ${scrollY}px;`);
+                    }
+                });
+                }, {
+                threshold: 0.05 // Se activa cuando al menos el 10% del elemento es visible
+                });
+                observer.observe(parent);
+            });
+        }
+        setStyleScroll();
+        // window.addEventListener('resize', setStyleScroll);
+
+    })
+</script>

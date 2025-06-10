@@ -1,0 +1,37 @@
+---
+import Background from '@atoms/Background.astro'
+import HeadingJsConf from '@molecules/HeadingJsConf.astro';
+import Chile from '@svgs/Chile.svg';
+---
+<section class="w-full relative z-10 bg-secondary/5 shadow-outline shadow-primary/15 rounded-xl overflow-hidden">
+    <Background class="bg-gradient-to-bl from-secondary/5 via-primary/15 to-secondary/5 w-dvw h-full"/>
+    <div class="relative container mx-auto max-w-[1200px]">
+        <div class="grid place-content-center w-full h-dvh max-h-[900px] z-10">
+            <section class="flex flex-col lg:grid lg:grid-cols-[1.9fr_1fr] gap-10 items-center justify-items-center w-full min-w-[900px]">
+                <div class="lg:row-start-1 lg:col-span-full">
+                    <HeadingJsConf/>
+                    <p class="text-2xl mb-4 self-center">
+                        <strong class="text-slate-100">En <i class="text-red-300">Santiago</i></strong> muy pronto<span class="scale-105 animate-pulse duration-100">.</span><span class="scale-105 animate-pulse duration-200">.</span><span class="scale-105 animate-pulse duration-300">.</span> 
+                    </p>
+                </div>
+                <time class="bg-clip-text bg-gradient-to-tl from-primary/5 via-primary/25 to-primary/50 text-transparent lg:row-start-2 text-4xl lg:text-8xl font-bod font-magra col-span-full justify-self-center text-shadow-2xs text-shadow-primary/20" datetime="2024-03-01T00:00:00Z">
+                    xx de Octubre 2025
+                </time>
+                <img width="200" height="auto" src="/images/jsconf-cl.png" alt="js conf chile logo" class="row-span-full col-span-1 col-start-2 justify-self-end size-[150px] lg:size-[250px] opacity-9 lg:hover:cursor-cell lg:hover:scale-[1.1] lg:hover:opacity-85 transition-all duration-300 mt-32 lg:mt-1/2 ml-30" />
+            </section>
+        </div>
+        <section class="mb-32 text-white text-2xl lg:text-3xl max-w-2xl mx-auto">
+            <p class="text-balance w-full md:w-dvw max-w-[900px] px-4">
+                Un evento para desarrolladores de <strong class="text-primary">JavaScript</strong>, <strong class="text-[#58c4dc]">React</strong>, <strong class="text-[#42b883]">Vue</strong>, <strong class="text-pink-100">apasionados por el software</strong> y <strong class="text-orange-300">más</strong>. Conoce a <span class="text-pink-100">expertos de la industria</span>, aprende sobre las últimas tendencias y tecnologías.
+            </p>
+        </section>
+        <div class="hidden md:flex absolute -top-[65%]  lg:-top-[55%] -left-[200px] w-1/2 h-[3300px] -z-10 items-center justify-center overflow-hidden after:ml-[45%]  lg:after:ml-10  after:-mt-[450px] after:content after:size-10 after:rounded-full after:bg-primary after:opacity-100 after:animate-pulse after:blur-2xl after:shadow-2xl after:shadow-primary">
+            <Chile class="absolute top-0 left-0 h-full opacity-5" />
+        </div>
+    </div>
+</section>
+
+<script>
+    import { Temporal } from 'temporal-polyfill'
+    console.log(Temporal.Now.zonedDateTimeISO().toString())
+</script>

@@ -1,0 +1,57 @@
+---
+import Section from '@components/Section.astro';
+import Gallery from '@molecules/Gallery.astro';
+import HeadingSection from '@molecules/HeadSection.astro';
+const items = [
+  "/jsconf/gallery/cl-js.avif",
+  "/jsconf/gallery/cl-js.jpg",
+  "/jsconf/gallery/cl-js.webp",
+  "/jsconf/gallery/jsconf-concept-02.avif",
+  "/jsconf/gallery/jsconf-concept-02.jpg",
+  "/jsconf/gallery/jsconf-concept-02.webp",
+  "/jsconf/gallery/jsconf-concept-03.avif",
+  "/jsconf/gallery/jsconf-concept-03.jpg",
+  "/jsconf/gallery/jsconf-concept-03.webp",
+  "/jsconf/gallery/jsconf-concept.avif",
+  "/jsconf/gallery/jsconf-concept.jpg",
+  "/jsconf/gallery/jsconf-concept.webp",
+  "/jsconf/gallery/previa-design.avif",
+  "/jsconf/gallery/previa-design.jpg",
+  "/jsconf/gallery/previa-design.webp",
+  "/jsconf/gallery/jsconf-acreditacion.avif",
+  "/jsconf/gallery/jsconf-acreditacion.jpg",
+  "/jsconf/gallery/jsconf-acreditacion.webp",
+  "/jsconf/gallery/jsconf-2023.avif",
+  "/jsconf/gallery/jsconf-2023.jpg",
+  "/jsconf/gallery/jsconf-2023.webp",
+  "/jsconf/gallery/jsconf-presentador.avif",
+  "/jsconf/gallery/jsconf-presentador.jpg",
+  "/jsconf/gallery/jsconf-presentador.webp",
+  "/jsconf/gallery/jsconf-chile-2023-dia-2.webp",
+  "/jsconf/gallery/jsconf-chile-2023-dia-2.avif",
+  "/jsconf/gallery/jsconf-chile-2023-dia-2.jpg",
+  "/jsconf/gallery/segunda-edicion-jsconf-01.avif",
+  "/jsconf/gallery/segunda-edicion-jsconf-01.jpg",
+  "/jsconf/gallery/segunda-edicion-jsconf-01.webp",
+  "/jsconf/gallery/segunda-edicion-jsconf-02.avif",
+  "/jsconf/gallery/segunda-edicion-jsconf-02.jpg",
+  "/jsconf/gallery/segunda-edicion-jsconf-02.webp",
+  "/jsconf/gallery/segunda-edicion-jsconf-03.avif",
+  "/jsconf/gallery/segunda-edicion-jsconf-03.jpg",
+  "/jsconf/gallery/segunda-edicion-jsconf-03.webp",
+  "/jsconf/gallery/segunda-edicion-jsconf-04.avif",
+  "/jsconf/gallery/segunda-edicion-jsconf-04.jpg",
+  "/jsconf/gallery/segunda-edicion-jsconf-04.webp",
+  "/jsconf/gallery/segunda-edicion-jsconf-05.avif",
+  "/jsconf/gallery/segunda-edicion-jsconf-05.jpg",
+  "/jsconf/gallery/segunda-edicion-jsconf-05.webp"
+];
+---
+<Section class="py-20 relative container mx-auto max-w-7xl @container">
+    <HeadingSection
+        class="mb-12" 
+        title="#JSconfCL, comunidad y experiencia única"
+        subtitle="Un punto de encuentro"
+        />
+    <Gallery items={items} />
+</Section>

@@ -1,0 +1,32 @@
+---
+import HeadingPrincipal from '@atoms/HeadingPrincipal.astro';
+import Hero from '@components/Hero.astro';
+import Footer from '@organisms/Footer.astro';
+import SectionAboutJsConf from '@organisms/SectionAboutJsConf.astro';
+import SectionGallery from '@organisms/SectionGallery.astro';
+import SectionPolicyPrivacy from '@organisms/SectionPolicyPrivacy.astro';
+import SectionVideo from '@organisms/SectionVideo.astro';
+const year = new Date().getFullYear()
+---
+<Hero />
+<SectionAboutJsConf />
+<SectionGallery />
+<SectionVideo />
+<SectionPolicyPrivacy />
+<Footer />
+<HeadingPrincipal
+    class="leading-tight text-4xl text-white w-full text-center mt-10 mb-10 md:mt-20 md:mb-20"
+    >
+    Próximamente más contenido
+</HeadingPrincipal>
+<div class="text-gray-400 w-full text-center block ">
+    <small>@{ year } desarrollado con cariño por </small>
+    <a
+    href="https://github.com/darioesp"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-xs text-primary/80">
+        Darío Espinoza
+    </a>. 👨🏻‍💻
+</div>
+    

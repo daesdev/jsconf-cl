@@ -1,0 +1,4 @@
+---
+const { class: className, color } = Astro.props;
+---
+<span class=`${className} ${color ?? 'text-primary'}`><slot/></span>

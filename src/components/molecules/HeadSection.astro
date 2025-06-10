@@ -1,0 +1,22 @@
+---
+import HeadingPrincipal from '@atoms/HeadingPrincipal.astro';
+import HeadingSmall from '@atoms/HeadingSmall.astro';
+import Paragraph from '@atoms/Paragraph.astro';
+const { class : className, title, subtitle, paragraph } = Astro.props;
+---
+<div class=`${className} flex flex-col w-full text-white`>
+    <HeadingSmall class="mt-4">
+        <slot name="subtitle">{subtitle}</slot>
+    </HeadingSmall>
+    <HeadingPrincipal>
+        <slot name="title">{title}</slot>
+    </HeadingPrincipal>
+    {
+        paragraph && (
+            <Paragraph class="mt-2 text-pretty">
+                <Fragment set:html={paragraph}/>
+            </Paragraph>
+        )
+    }
+    <slot name="content" />
+</div> 

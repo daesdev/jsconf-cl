@@ -1,0 +1,52 @@
+---
+import Section from '@components/Section.astro';
+import Badges from '@molecules/Badges.astro';
+import HeadingSection from '@molecules/HeadSection.astro';
+import LiteYoutubePlus from '@molecules/LiteYoutubePlus.astro';
+const badges = [
+  "#JSConfcl",
+  "Javascript",
+  "React",
+  "Vue",
+  "Angular",
+  "Node",
+  "Web",
+  "Frontend",
+  "Backend",
+  "Community",
+  "Developers",
+  "Programming",
+  "Tech",
+  "Top Conference",
+  "E2E",
+  "Cloud",
+  "Deployment",
+  "Serverless",
+  "Performance",
+]
+const duration = badges.join('').length * 0.1; // Adjust duration based on the length of the badges
+const videoId = 'OLpl5ghPQc8';
+---
+<Section class="pb-20 -mt-20 relative container mx-auto max-w-7xl">
+    <HeadingSection
+        class="text-center mb-12 z-20 relative" 
+        title="& Más..."
+        subtitle=""
+        />
+    <div class="@container overflow-x-hidden shadow-badges before:w-[100cqw] after:w-[100cqw]">
+      <Badges 
+        class="relative leading-relaxed text-center mb-12 [&]:flex-nowrap animation-badges"
+        styles={`--animation-duration: ${duration}s;`}
+        items={badges} />
+    </div>
+    <LiteYoutubePlus videoId={videoId} ytimg={true} title="JsConf chile 2024" />
+</Section>
+<script>
+  const $ = (selector : string) => document.querySelector(selector);
+  const badges = $('.animation-badges');
+  const scrollEnd = () => badges && badges?.scrollWidth - badges?.clientWidth + 40;
+  badges && badges.setAttribute('style', `${badges.getAttribute('style')} --scroll-end: -${scrollEnd()}px;`);
+  window.addEventListener('resize', () => {
+    badges && badges.setAttribute('style', `${badges.getAttribute('style')} --scroll-end: -${scrollEnd()}px;`);
+  });
+</script>
