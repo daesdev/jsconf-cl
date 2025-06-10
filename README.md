@@ -1,48 +1,110 @@
-# Astro Starter Kit: Basics
+# JSConf Chile 🇨🇱
 
-```sh
-bun create astro@latest -- --template basics
+![JSConf Chile Preview](./public/preview.webp)
+
+JSConf Chile website built with modern web technologies, featuring a beautiful design and optimized performance.
+
+## 🚀 Tech Stack
+
+- **[Astro](https://astro.build/)** - Modern static site generator with partial hydration
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe JavaScript development
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Bun](https://bun.sh/)** - Fast JavaScript runtime and package manager
+
+## 🏗️ Architecture
+
+This project follows **Atomic Design** principles for component organization:
+
+```
+src/components/
+├── atoms/          # Basic building blocks (buttons, inputs, etc.)
+├── molecules/      # Simple combinations of atoms
+├── organisms/      # Complex components made of molecules/atoms
+└── templates/      # Page-level components and layouts
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🎨 Features
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Modern Design System** - Atomic Design architecture
+- **Performance Optimized** - Multiple image formats (AVIF, WebP, JPG)
+- **Responsive Gallery** - Dynamic masonry layout with hover effects
+- **Type Safety** - Full TypeScript integration
+- **Modern Fonts** - Custom Magra font family
+- **YouTube Integration** - Lite YouTube component for performance
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## 📦 Installation
 
-## 🚀 Project Structure
+```bash
+# Install dependencies
+bun install
 
-Inside of your Astro project, you'll see the following folders and files:
+# Start development server
+bun run dev
 
-```text
-/
+# Build for production
+bun run build
+
+# Preview production build
+bun run preview
+```
+
+## 🎯 Project Structure
+
+```
 ├── public/
-│   └── favicon.svg
+│   ├── preview.webp           # Preview image
+│   ├── fonts/                 # Custom fonts (Magra)
+│   └── jsconf/gallery/        # Event gallery images
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/
+│   │   ├── atoms/             # Basic components
+│   │   ├── molecules/         # Gallery, forms, etc.
+│   │   ├── organisms/         # Complex sections
+│   │   └── templates/         # Page templates
+│   ├── layouts/               # Page layouts
+│   ├── pages/                 # Astro pages
+│   └── styles/                # Global styles
+└── astro.config.mjs           # Astro configuration
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 🖼️ Image Optimization
 
-## 🧞 Commands
+The project uses multiple image formats for optimal performance:
+- **AVIF** - Modern format with best compression
+- **WebP** - Widely supported modern format  
+- **JPG/PNG** - Fallback for older browsers
 
-All commands are run from the root of the project, from a terminal:
+Gallery component automatically groups images by filename and serves the best format available.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+## 🎬 Components
 
-## 👀 Want to learn more?
+### Gallery Component
+Dynamic masonry gallery with:
+- Automatic image grouping by filename
+- Multiple format support (AVIF, WebP, JPG)
+- Hover animations and effects
+- Responsive column layout
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Picture Component
+Optimized image component with:
+- Automatic format selection
+- Lazy loading
+- Responsive sizing
+- Fallback support
+
+## 🚀 Development
+
+```bash
+# Run development server
+bun run dev
+
+# Access at http://localhost:4321
+```
+
+## 📝 License
+
+[MIT License](./LICENSE)
+
+---
+
+Built with ❤️ for the Darío Espinoza
