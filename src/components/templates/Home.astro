@@ -1,13 +1,15 @@
 ---
 import HeadingPrincipal from '@atoms/HeadingPrincipal.astro';
-import Hero from '@components/Hero.astro';
 import Footer from '@organisms/Footer.astro';
+import Hero from '@organisms/Hero.astro';
+import Navigation from '@organisms/Navigation.astro';
 import SectionAboutJsConf from '@organisms/SectionAboutJsConf.astro';
 import SectionGallery from '@organisms/SectionGallery.astro';
 import SectionPolicyPrivacy from '@organisms/SectionPolicyPrivacy.astro';
 import SectionVideo from '@organisms/SectionVideo.astro';
 const year = new Date().getFullYear()
 ---
+<Navigation />
 <Hero />
 <SectionAboutJsConf />
 <SectionGallery />

@@ -126,19 +126,47 @@ body {
 
 }
 
+.sticky-heading {
+    position: sticky;
+    top     : .25rem;
+    z-index : 1000;
+
+    ~section {
+        margin-top: calc(-1 * var(--sticky-heading-height, 70px));
+    }
+}
+
 @media(prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: scroll()) {
         :root {
-            --font-size: 2rem;
-            --font-size-lg: 4rem;
-            --font-size-xl: 10rem;
+            --font-size            : 2rem;
+            --font-size-lg         : 4rem;
+            --font-size-xl         : 10rem;
+            --sticky-heading-height: 70px;
         }
-        
+
         @media (width >=640px) {
             :root {
-                --font-size: 4rem;
+                --font-size   : 4rem;
                 --font-size-lg: 6rem;
                 --font-size-xl: 26rem;
+            }
+        }
+
+        @keyframes sticky-heading {
+            from {
+                visibility: hidden;
+                position  : sticky;
+                top       : calc(-1 * var(--sticky-heading-height, 70px));
+                margin-top: calc(-1 * var(--sticky-heading-height, 70px));
+                z-index   : -1;
+            }
+
+            to {
+                visibility: visible;
+                top       : .25rem;
+                margin-top: .25rem;
+                z-index   : 99;
             }
         }
 
@@ -271,6 +299,20 @@ body {
                     visibility: hidden !important;
                     transition: visibility .5s ease-in-out;
                 }
+            }
+        }
+
+        .sticky-heading {
+            --range-start      : 350px;
+            --range-end        : 550px;
+            animation-name     : sticky-heading;
+            animation-timeline : scroll(block);
+            animation-range    : var(--range-start) var(--range-end);
+            animation-fill-mode: backwards;
+            animation-duration : 0.75s;
+
+            ~section {
+                margin-top: 0;
             }
         }
 
