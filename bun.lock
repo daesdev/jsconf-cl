@@ -5,6 +5,7 @@
       "name": "jsconfcl",
       "dependencies": {
         "@justinribeiro/lite-youtube": "^1.8.2",
+        "@midudev/tailwind-animations": "^0.2.0",
         "@tailwindcss/vite": "^4.1.4",
         "astro": "^5.7.5",
         "tailwindcss": "^4.1.4",
@@ -126,6 +127,8 @@
     "@jridgewell/sourcemap-codec": ["@jridgewell/sourcemap-codec@1.5.0", "", {}, "sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ=="],
 
     "@justinribeiro/lite-youtube": ["@justinribeiro/lite-youtube@1.8.2", "", {}, "sha512-wayU5sYA/e5J/1j7zFk8Hoi72Hk67Axy7Za2OFRzsytd9gvtv7ZeWhmdi2lOGbnXwMZHkeMsqxRGFxH60lo5bg=="],
+
+    "@midudev/tailwind-animations": ["@midudev/tailwind-animations@0.2.0", "", { "peerDependencies": { "tailwindcss": "^3.0.0 || ^4.0.0" } }, "sha512-4mktb060dA7SZz0LjMfhBT30HWPmQENwF4AJC7/etESWohe4pukST0ohC2yAePS5GNinhY3MXmZZ8//2ywafOQ=="],
 
     "@oslojs/encoding": ["@oslojs/encoding@1.1.0", "", {}, "sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ=="],
 

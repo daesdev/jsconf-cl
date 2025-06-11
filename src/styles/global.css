@@ -8,6 +8,8 @@
     --font-magra     : 'Magra', sans-serif;
 }
 
+@plugin "@midudev/tailwind-animations";
+
 @keyframes slide-scrollX-badges {
     0% {
         transform: translateX(var(--scroll-start, 5%));
