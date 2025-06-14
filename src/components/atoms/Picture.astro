@@ -1,9 +1,17 @@
 ---
-const { classWrapper = '', class: className = '', webp, avif, principal, alt } = Astro.props;
+const {
+  classWrapper = "",
+  class: className = "",
+  webp,
+  avif,
+  principal,
+  alt,
+} = Astro.props;
 const classes = `${classWrapper} w-full h-auto aspect-video`.trim();
 ---
+
 <picture class={classes}>
-    {webp && <source srcset={webp} type="image/webp">}
-    {avif && <source srcset={avif} type="image/jpeg">}
-    <img class={`w-full h-auto ${className}`} src={principal} alt={alt}>
+  {webp && <source srcset={webp} type="image/webp" />}
+  {avif && <source srcset={avif} type="image/jpeg" />}
+  <img class={`w-full h-auto ${className}`} src={principal} alt={alt} />
 </picture>

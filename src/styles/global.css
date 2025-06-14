@@ -2,339 +2,336 @@
 @import "./fonts.css";
 
 @theme {
-    --color-primary  : #F0DB4F;
-    --color-secondary: #323330;
-    --font-fallback  : system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --font-magra     : 'Magra', sans-serif;
+  --color-primary: #f0db4f;
+  --color-secondary: #323330;
+  --font-fallback:
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-magra: "Magra", sans-serif;
 }
 
 @plugin "@midudev/tailwind-animations";
 
 @keyframes slide-scrollX-badges {
-    0% {
-        transform: translateX(var(--scroll-start, 5%));
-    }
+  0% {
+    transform: translateX(var(--scroll-start, 5%));
+  }
 
-    100% {
-        transform: translateX(var(--scroll-end, calc(100%)));
-    }
+  100% {
+    transform: translateX(var(--scroll-end, calc(100%)));
+  }
 }
 
 html {
-    font-family            : "Magra", var(--font-fallback);
-    -webkit-font-smoothing : antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering         : optimizeLegibility;
-    overflow-x             : hidden;
-    scroll-behavior        : smooth;
+  font-family: "Magra", var(--font-fallback);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-    @apply bg-black;
-    color: var(--color-primary);
+  @apply bg-black;
+  color: var(--color-primary);
 }
 
 .drop-shadow-plus {
-    filter    : drop-shadow(0 0 10px #ffd70080);
-    mask-image: linear-gradient(to bottom, #000000 80%, transparent 95%);
+  filter: drop-shadow(0 0 10px #ffd70080);
+  mask-image: linear-gradient(to bottom, #000000 80%, transparent 95%);
 
-    @media (width >=640px) {
-        filter: drop-shadow(0 0 20px #ffd70080);
-    }
+  @media (width >=640px) {
+    filter: drop-shadow(0 0 20px #ffd70080);
+  }
 }
 
 .wrapper-shadow-bottom {
-    filter    : drop-shadow(0 0 10px #000000);
-    mask-image: linear-gradient(to bottom, #000000 80%, transparent 95%);
+  filter: drop-shadow(0 0 10px #000000);
+  mask-image: linear-gradient(to bottom, #000000 80%, transparent 95%);
 }
 
 .shadow-badges {
-    position: relative;
-    z-index : 1;
+  position: relative;
+  z-index: 1;
 
-    &::after {
-        content   : '';
-        position  : absolute;
-        width     : 10%;
-        height    : 100%;
-        top       : 0;
-        right     : 0;
-        z-index   : 21;
-        background: linear-gradient(to right, transparent 70%, #000000);
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 21;
+    background: linear-gradient(to right, transparent 70%, #000000);
+  }
 
-    &::before {
-        content   : '';
-        position  : absolute;
-        width     : 10%;
-        height    : 100%;
-        top       : 0;
-        left      : 0;
-        z-index   : 21;
-        background: linear-gradient(to left, transparent 70%, #000000);
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 21;
+    background: linear-gradient(to left, transparent 70%, #000000);
+  }
 }
 
 .animation-badges {
-    position : relative;
-    z-index  : 20;
-    animation: slide-scrollX-badges var(--duration, 20s) linear infinite alternate;
+  position: relative;
+  z-index: 20;
+  animation: slide-scrollX-badges var(--duration, 20s) linear infinite alternate;
 
-    &:hover {
-        animation-play-state: paused;
-    }
+  &:hover {
+    animation-play-state: paused;
+  }
 }
 
 .border-gradient {
-    position  : relative;
-    background: linear-gradient(to top right, #F0DB4F, #7dbd6b);
-    transition: all 0.3s ease-in-out;
-    z-index   : 1;
+  position: relative;
+  background: linear-gradient(to top right, #f0db4f, #7dbd6b);
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
 
-    &:hover {
-        scale    : .97;
-        transform: scale(.97);
-
-        &:after {
-            inset     : -2% 0 0 -2%;
-            background: linear-gradient(-45deg, #F0DB4F, #e4d04c, #bbab44, #ae9e36df);
-        }
-    }
+  &:hover {
+    scale: 0.97;
+    transform: scale(0.97);
 
     &:after {
-        content      : '';
-        position     : absolute;
-        width        : 100%;
-        height       : 100%;
-        inset        : 0;
-        z-index      : -2;
-        filter       : blur(5px);
-        border-radius: .5rem;
-        transition   : all 0.5s ease-in-out;
+      inset: -2% 0 0 -2%;
+      background: linear-gradient(-45deg, #f0db4f, #e4d04c, #bbab44, #ae9e36df);
     }
+  }
 
-    &:before {
-        content      : '';
-        position     : absolute;
-        width        : 100%;
-        height       : 100%;
-        inset        : 0;
-        z-index      : -1;
-        border-radius: .5rem;
-        @apply bg-black;
-    }
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: -2;
+    filter: blur(5px);
+    border-radius: 0.5rem;
+    transition: all 0.5s ease-in-out;
+  }
 
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    z-index: -1;
+    border-radius: 0.5rem;
+    @apply bg-black;
+  }
 }
 
 .sticky-heading {
-    position: sticky;
-    top     : .25rem;
-    z-index : 1000;
+  position: sticky;
+  top: 0.25rem;
+  z-index: 1000;
 
-    ~section {
-        margin-top: calc(-1 * var(--sticky-heading-height, 70px));
-    }
+  ~ section {
+    margin-top: calc(-1 * var(--sticky-heading-height, 70px));
+  }
 }
 
-@media(prefers-reduced-motion: no-preference) {
-    @supports (animation-timeline: scroll()) {
-        :root {
-            --font-size            : 2rem;
-            --font-size-lg         : 4rem;
-            --font-size-xl         : 10rem;
-            --sticky-heading-height: 70px;
-        }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    :root {
+      --font-size: 2rem;
+      --font-size-lg: 4rem;
+      --font-size-xl: 10rem;
+      --sticky-heading-height: 70px;
+    }
 
-        @media (width >=640px) {
-            :root {
-                --font-size   : 4rem;
-                --font-size-lg: 6rem;
-                --font-size-xl: 26rem;
-            }
-        }
+    @media (width >=640px) {
+      :root {
+        --font-size: 4rem;
+        --font-size-lg: 6rem;
+        --font-size-xl: 26rem;
+      }
+    }
 
-        @keyframes sticky-heading {
-            from {
-                visibility: hidden;
-                position  : sticky;
-                top       : calc(-1 * var(--sticky-heading-height, 70px));
-                margin-top: calc(-1 * var(--sticky-heading-height, 70px));
-                z-index   : -1;
-            }
+    @keyframes sticky-heading {
+      from {
+        visibility: hidden;
+        position: sticky;
+        top: calc(-1 * var(--sticky-heading-height, 70px));
+        margin-top: calc(-1 * var(--sticky-heading-height, 70px));
+        z-index: -1;
+      }
 
-            to {
-                visibility: visible;
-                top       : .25rem;
-                margin-top: .25rem;
-                z-index   : 99;
-            }
-        }
+      to {
+        visibility: visible;
+        top: 0.25rem;
+        margin-top: 0.25rem;
+        z-index: 99;
+      }
+    }
 
-        /* YTIMG FRAME */
-        @keyframes ytimg-title {
-            from {
-                display          : inline-block;
-                margin-top       : -20px;
-                line-height      : 1.1;
-                align-self       : start;
-                font-size        : var(--font-size);
-                opacity          : 1;
-                background-size  : calc(100% + 200px);
-                background-repeat: no-repeat;
-                z-index          : 10;
-            }
+    /* YTIMG FRAME */
+    @keyframes ytimg-title {
+      from {
+        display: inline-block;
+        margin-top: -20px;
+        line-height: 1.1;
+        align-self: start;
+        font-size: var(--font-size);
+        opacity: 1;
+        background-size: calc(100% + 200px);
+        background-repeat: no-repeat;
+        z-index: 10;
+      }
 
-            25% {
-                font-size: var(--font-size-lg);
-            }
+      25% {
+        font-size: var(--font-size-lg);
+      }
 
-            65% {
-                margin-top     : 0;
-                opacity        : 1;
-                background-size: calc(100% + 100px);
-            }
+      65% {
+        margin-top: 0;
+        opacity: 1;
+        background-size: calc(100% + 100px);
+      }
 
-            to {
-                font-size      : var(--font-size-xl);
-                opacity        : 0;
-                background-size: 1100px;
-                z-index        : -1;
-            }
-        }
+      to {
+        font-size: var(--font-size-xl);
+        opacity: 0;
+        background-size: 1100px;
+        z-index: -1;
+      }
+    }
 
-        @keyframes ytimg-img {
-            from {
-                z-index: 10;
-                opacity: 0;
-            }
+    @keyframes ytimg-img {
+      from {
+        z-index: 10;
+        opacity: 0;
+      }
 
-            25% {
-                opacity: 0;
+      25% {
+        opacity: 0;
+      }
 
-            }
+      40% {
+        opacity: 7%;
+        visibility: visible;
+      }
 
-            40% {
-                opacity   : 7%;
-                visibility: visible;
-            }
+      65% {
+        opacity: 100%;
+      }
 
-            65% {
-                opacity: 100%;
-            }
+      to {
+        z-index: 1;
+        opacity: 1;
+      }
+    }
 
-            to {
-                z-index: 1;
-                opacity: 1;
-            }
+    @keyframes lite-youtube {
+      from {
+        visibility: hidden;
+        z-index: -1;
+        opacity: 0;
+      }
 
-        }
+      to {
+        visibility: visible;
+        opacity: 1;
+        z-index: 99;
+      }
+    }
 
-        @keyframes lite-youtube {
-            from {
-                visibility: hidden;
-                z-index   : -1;
-                opacity   : 0;
-            }
+    #ytimg-text {
+      display: inline-block;
+      --range-start: entry 0;
+      --range-end: cover 55%;
+      view-timeline-name: --ytimg;
+      view-timeline-axis: block;
 
-            to {
-                visibility: visible;
-                opacity   : 1;
-                z-index   : 99;
-            }
-        }
+      animation-timeline: --ytimg;
+      animation-name: ytimg-title;
 
+      animation-range: var(--range-start) var(--range-end);
+      animation-fill-mode: both;
+      transition: visibility 0.5s linear ease-in-out;
 
-        #ytimg-text {
-            display           : inline-block;
-            --range-start     : entry 0;
-            --range-end       : cover 55%;
-            view-timeline-name: --ytimg;
+      &:has(~ lite-youtube iframe) {
+        visibility: hidden !important;
+        transition: visibility 0.5s linear ease-in-out;
+      }
+
+      & ~ picture {
+        --range-start: entry 0;
+        --range-end: cover 90%;
+        visibility: hidden;
+        view-timeline-name: --ytimg-img;
+        view-timeline-axis: block;
+        animation-name: ytimg-img;
+        animation-timeline: --ytimg-img;
+        animation-range: var(--range-start) var(--range-end);
+        animation-fill-mode: both;
+        transition: visibility 0.5s linear ease-in-out;
+
+        & ~ lite-youtube {
+          &:not(:has(iframe)) {
+            z-index: -1;
+            visibility: hidden;
+            --range-start: entry 40%;
+            --range-end: cover 75%;
+            view-timeline-name: --lite-youtube;
             view-timeline-axis: block;
-
-            animation-timeline: --ytimg;
-            animation-name    : ytimg-title;
-
-            animation-range    : var(--range-start) var(--range-end);
+            animation-name: lite-youtube;
+            animation-timeline: --lite-youtube;
+            animation-range: var(--range-start) var(--range-end);
             animation-fill-mode: both;
-            transition         : visibility .5s linear ease-in-out;
+          }
 
-            &:has(~lite-youtube iframe) {
-                visibility: hidden !important;
-                transition: visibility .5s linear ease-in-out;
-            }
-
-            &~picture {
-                --range-start      : entry 0;
-                --range-end        : cover 90%;
-                visibility         : hidden;
-                view-timeline-name : --ytimg-img;
-                view-timeline-axis : block;
-                animation-name     : ytimg-img;
-                animation-timeline : --ytimg-img;
-                animation-range    : var(--range-start) var(--range-end);
-                animation-fill-mode: both;
-                transition         : visibility .5s linear ease-in-out;
-
-                &~lite-youtube {
-                    &:not(:has(iframe)) {
-                        z-index            : -1;
-                        visibility         : hidden;
-                        --range-start      : entry 40%;
-                        --range-end        : cover 75%;
-                        view-timeline-name : --lite-youtube;
-                        view-timeline-axis : block;
-                        animation-name     : lite-youtube;
-                        animation-timeline : --lite-youtube;
-                        animation-range    : var(--range-start) var(--range-end);
-                        animation-fill-mode: both;
-                    }
-
-                    &:has(iframe) {
-                        transition: visibility .5s ease-in-out;
-                        visibility: visible !important;
-                    }
-                }
-
-                &:has(~lite-youtube iframe) {
-                    visibility: hidden !important;
-                    transition: visibility .5s ease-in-out;
-                }
-            }
+          &:has(iframe) {
+            transition: visibility 0.5s ease-in-out;
+            visibility: visible !important;
+          }
         }
 
-        .sticky-heading {
-            --range-start      : 350px;
-            --range-end        : 550px;
-            animation-name     : sticky-heading;
-            animation-timeline : scroll(block);
-            animation-range    : var(--range-start) var(--range-end);
-            animation-fill-mode: backwards;
-            animation-duration : 0.75s;
-
-            ~section {
-                margin-top: 0;
-            }
+        &:has(~ lite-youtube iframe) {
+          visibility: hidden !important;
+          transition: visibility 0.5s ease-in-out;
         }
-
+      }
     }
 
-    @keyframes anchorsCta {
-        from {
-            position: fixed;
-            bottom  : 32px;
-            z-index : 1000;
-        }
+    .sticky-heading {
+      --range-start: 350px;
+      --range-end: 550px;
+      animation-name: sticky-heading;
+      animation-timeline: scroll(block);
+      animation-range: var(--range-start) var(--range-end);
+      animation-fill-mode: backwards;
+      animation-duration: 0.75s;
 
-        to {
-            position: relative;
-        }
+      ~ section {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @keyframes anchorsCta {
+    from {
+      position: fixed;
+      bottom: 32px;
+      z-index: 1000;
     }
 
-    #anchors-cta {
-        --range-start     : entry 0%;
-        --range-end       : contain calc(var(--offsetTop, 3100px) * 3.1);
-        animation         : anchorsCta both;
-        animation-timeline: scroll(block);
-        animation-range   : var(--range-start) var(--range-end);
+    to {
+      position: relative;
     }
+  }
+
+  #anchors-cta {
+    --range-start: entry 0%;
+    --range-end: contain calc(var(--offsetTop, 3100px) * 3.1);
+    animation: anchorsCta both;
+    animation-timeline: scroll(block);
+    animation-range: var(--range-start) var(--range-end);
+  }
 }

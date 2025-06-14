@@ -1,7 +1,7 @@
 ---
-import Section from '@components/Section.astro';
-import Gallery from '@molecules/Gallery.astro';
-import HeadingSection from '@molecules/HeadSection.astro';
+import Section from "@components/Section.astro";
+import Gallery from "@molecules/Gallery.astro";
+import HeadingSection from "@molecules/HeadSection.astro";
 const items = [
   "/jsconf/gallery/cl-js.avif",
   "/jsconf/gallery/cl-js.jpg",
@@ -44,14 +44,15 @@ const items = [
   "/jsconf/gallery/segunda-edicion-jsconf-04.webp",
   "/jsconf/gallery/segunda-edicion-jsconf-05.avif",
   "/jsconf/gallery/segunda-edicion-jsconf-05.jpg",
-  "/jsconf/gallery/segunda-edicion-jsconf-05.webp"
+  "/jsconf/gallery/segunda-edicion-jsconf-05.webp",
 ];
 ---
+
 <Section class="py-20 relative container mx-auto max-w-7xl @container">
-    <HeadingSection
-        class="mb-12" 
-        title="#JSconfCL, comunidad y experiencia única"
-        subtitle="Un punto de encuentro"
-        />
-    <Gallery items={items} />
+  <HeadingSection
+    class="mb-12"
+    title="#JSconfCL, comunidad y experiencia única"
+    subtitle="Un punto de encuentro"
+  />
+  <Gallery items={items} />
 </Section>

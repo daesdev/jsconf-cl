@@ -15,7 +15,7 @@
       "@layouts/*": ["./src/layouts/*"],
       "@svgs/*": ["./src/svgs/*"],
       "@styles/*": ["./src/styles/*"],
-      "@utils/*": ["./src/utils/*"],
+      "@utils/*": ["./src/utils/*"]
     }
-  },
+  }
 }

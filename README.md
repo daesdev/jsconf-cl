@@ -70,8 +70,9 @@ bun run preview
 ## 🖼️ Image Optimization
 
 The project uses multiple image formats for optimal performance:
+
 - **AVIF** - Modern format with best compression
-- **WebP** - Widely supported modern format  
+- **WebP** - Widely supported modern format
 - **JPG/PNG** - Fallback for older browsers
 
 Gallery component automatically groups images by filename and serves the best format available.
@@ -79,14 +80,18 @@ Gallery component automatically groups images by filename and serves the best fo
 ## 🎬 Components
 
 ### Gallery Component
+
 Dynamic masonry gallery with:
+
 - Automatic image grouping by filename
 - Multiple format support (AVIF, WebP, JPG)
 - Hover animations and effects
 - Responsive column layout
 
 ### Picture Component
+
 Optimized image component with:
+
 - Automatic format selection
 - Lazy loading
 - Responsive sizing

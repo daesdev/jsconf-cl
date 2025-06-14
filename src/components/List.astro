@@ -1,22 +1,20 @@
 ---
 interface Props {
-    id?: string;
-    class?: string;
-    style?: string;
-    dataScrollId?: string;
+  id?: string;
+  class?: string;
+  style?: string;
+  dataScrollId?: string;
 }
-const { id, class: className = '', style = '', dataScrollId } = Astro.props;
+const { id, class: className = "", style = "", dataScrollId } = Astro.props;
 const classes = `p-0 text-lg group ${className}`.trim();
 ---
-<ul
-    id={id}
-    class={classes}
-    style={style}
-    data-scroll-id={dataScrollId}
->
-    <slot>
-        <li>Recuerda que puedes usar este componente para crear listas de elementos.</li>
-        <li class="list-disc">Elemento 1</li>
-        <li class="list-disc">Elemento 2</li>
-    </slot>
+
+<ul id={id} class={classes} style={style} data-scroll-id={dataScrollId}>
+  <slot>
+    <li>
+      Recuerda que puedes usar este componente para crear listas de elementos.
+    </li>
+    <li class="list-disc">Elemento 1</li>
+    <li class="list-disc">Elemento 2</li>
+  </slot>
 </ul>
