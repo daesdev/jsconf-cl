@@ -1,34 +1,34 @@
 ---
-import HeadingPrincipal from '@atoms/HeadingPrincipal.astro';
-import Footer from '@organisms/Footer.astro';
-import Hero from '@organisms/Hero.astro';
-import Navigation from '@organisms/Navigation.astro';
-import SectionAboutJsConf from '@organisms/SectionAboutJsConf.astro';
-import SectionGallery from '@organisms/SectionGallery.astro';
-import SectionPolicyPrivacy from '@organisms/SectionPolicyPrivacy.astro';
-import SectionVideo from '@organisms/SectionVideo.astro';
-const year = new Date().getFullYear()
+import HeadingPrincipal from "@atoms/HeadingPrincipal.astro";
+import Copyright from "@molecules/Copyright.astro";
+import Hero from "@organisms/Hero.astro";
+import Navigation from "@organisms/Navigation.astro";
+import SectionAboutJsConf from "@organisms/SectionAboutJsConf.astro";
+import SectionBackground from "@organisms/SectionBackground.astro";
+import SectionGallery from "@organisms/SectionGallery.astro";
+import SectionPolicyPrivacy from "@organisms/SectionPolicyPrivacy.astro";
+import SectionVideo from "@organisms/SectionVideo.astro";
+const link = {
+  href: "https:github.com/darioespinoza",
+  text: "Darío Espinoza.",
+};
+const year = new Date().getFullYear();
 ---
+
 <Navigation />
 <Hero />
 <SectionAboutJsConf />
 <SectionGallery />
 <SectionVideo />
 <SectionPolicyPrivacy />
-<Footer />
+<SectionBackground />
 <HeadingPrincipal
-    class="leading-tight text-4xl text-white w-full text-center mt-10 mb-10 md:mt-20 md:mb-20"
-    >
-    Próximamente más contenido
+  class="leading-tight text-4xl text-white w-full text-center mt-10 mb-10 md:mt-20 md:mb-20"
+>
+  Próximamente más contenido
 </HeadingPrincipal>
-<div class="text-gray-400 w-full text-center block ">
-    <small>@{ year } desarrollado con cariño por </small>
-    <a
-    href="https://github.com/darioesp"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="text-xs text-primary/80">
-        Darío Espinoza
-    </a>. 👨🏻‍💻
-</div>
-    
+<Copyright
+  link={link}
+  text={`@${year} desarrollado con cariño por`}
+  linkClass="text-xs text-primary/80 hover:text-primary/100 transition-colors duration-300"
+/>
