@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "format": "prettier --write .",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -13,6 +14,8 @@
     "@midudev/tailwind-animations": "^0.2.0",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.5",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.1.4",
     "temporal-polyfill": "^0.3.0"
   }
