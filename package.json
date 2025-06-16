@@ -12,11 +12,19 @@
   "dependencies": {
     "@justinribeiro/lite-youtube": "^1.8.2",
     "@midudev/tailwind-animations": "^0.2.0",
-    "@tailwindcss/vite": "^4.1.4",
-    "astro": "^5.7.5",
+    "@tailwindcss/vite": "^4.1.10",
+    "astro": "^5.9.3",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "tailwindcss": "^4.1.4",
     "temporal-polyfill": "^0.3.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@typescript-eslint/parser": "^8.34.0",
+    "eslint": "^9.29.0",
+    "eslint-plugin-astro": "^1.3.1",
+    "stylelint": "^16.20.0",
+    "stylelint-config-standard-scss": "^15.0.1"
   }
 }
