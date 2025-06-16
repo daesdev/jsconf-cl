@@ -1,7 +1,6 @@
 {
-    "extends": "stylelint-config-standard-scss",
+    "extends": "stylelint-config-tailwindcss",
     "rules": {
-        "indentation": 4,
-        "selector-class-pattern": null
+        "declaration-property-value-no-unknown": true
     }
 }
