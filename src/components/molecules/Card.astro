@@ -1,3 +1,16 @@
 ---
-const { class: className } = Astro.props;
+import AnchorWrapper from '@atoms/AnchorWrapper.astro';
+import Picture from '@atoms/Picture.astro';
+import Small from '@atoms/Small.astro';
+const { class: className, href, src, alt, title } = Astro.props;
+const defaultClass =
+    'p-5 bg-transparent border-[.5px] rounded-3xl border-primary/25 bg-gradient-to-tl from-white/5 to-white/10 backdrop-blur-md flex flex-col justify-between items-center aspect-1/1 hover:shadow-xs hover:shadow-primary/50 transition-shadow duration-200';
+const classes = className ? ` ${className} ${defaultClass}` : defaultClass;
 ---
+
+<div class={classes}>
+    <AnchorWrapper href={href}>
+        <Picture principal={src} alt={alt} />
+        <Small text={title} />
+    </AnchorWrapper>
+</div>

@@ -23,12 +23,12 @@ const { videoId, ytimg = true, title, playLabel } = Astro.props;
         }
         {
             videoId && (
-                <LiteYoutube videoId={videoId}  
-                    class="rounded-lg z-30 w-full h-full [&]:border-primary/80 col-start-1 row-start-1" 
+                <LiteYoutube videoId={videoId}
+                    class="rounded-lg z-30 w-full h-full [&]:border-primary/80 col-start-1 row-start-1"
                     style="--color-accent: var(--color-primary); background-image: none; background-color: transparent;"
                     tabindex="0"
                     aria-label="button">
-                    <a  
+                    <a
                         href={`https://youtube.com/watch?v=${videoId}`}
                         class="lty-playbtn"
                         title={title}

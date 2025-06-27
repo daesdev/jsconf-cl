@@ -1,5 +1,4 @@
 ---
-import HeadingPrincipal from "@atoms/HeadingPrincipal.astro";
 import Copyright from "@molecules/Copyright.astro";
 import Hero from "@organisms/Hero.astro";
 import Navigation from "@organisms/Navigation.astro";
@@ -7,6 +6,7 @@ import SectionAboutJsConf from "@organisms/SectionAboutJsConf.astro";
 import SectionBackground from "@organisms/SectionBackground.astro";
 import SectionGallery from "@organisms/SectionGallery.astro";
 import SectionPolicyPrivacy from "@organisms/SectionPolicyPrivacy.astro";
+import SectionSponsors from "@organisms/SectionSponsors.astro";
 import SectionVideo from "@organisms/SectionVideo.astro";
 const link = {
   href: "https:github.com/darioespinoza",
@@ -22,11 +22,8 @@ const year = new Date().getFullYear();
 <SectionVideo />
 <SectionPolicyPrivacy />
 <SectionBackground />
-<HeadingPrincipal
-  class="leading-tight text-4xl text-white w-full text-center mt-10 mb-10 md:mt-20 md:mb-20"
->
-  Próximamente más contenido
-</HeadingPrincipal>
+<SectionSponsors />
+
 <Copyright
   link={link}
   text={`@${year} desarrollado con cariño por`}

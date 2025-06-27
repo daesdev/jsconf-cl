@@ -142,17 +142,12 @@ body {
 @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: scroll()) {
         :root {
-            --font-size            : 2rem;
-            --font-size-lg         : 4rem;
-            --font-size-xl         : 10rem;
-            --sticky-heading-height: 70px;
+            --font-size: 2rem;
         }
 
         @media (width >=640px) {
             :root {
-                --font-size   : 4rem;
-                --font-size-lg: 6rem;
-                --font-size-xl: 26rem;
+                --font-size: 4rem;
             }
         }
 
@@ -180,15 +175,11 @@ body {
                 margin-top       : -20px;
                 line-height      : 1.1;
                 align-self       : start;
-                font-size        : var(--font-size);
+                font-size        : calc(var(--font-size) + (100vw / 30));
                 opacity          : 1;
                 background-size  : calc(100% + 200px);
                 background-repeat: no-repeat;
                 z-index          : 10;
-            }
-
-            25% {
-                font-size: var(--font-size-lg);
             }
 
             65% {
@@ -198,7 +189,7 @@ body {
             }
 
             100% {
-                font-size        : var(--font-size-xl);
+                font-size        : calc(var(--font-size) + (100vw / 7));
                 opacity          : 0;
                 background-size  : 1100px;
                 z-index          : -1;
