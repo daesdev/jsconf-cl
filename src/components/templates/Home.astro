@@ -1,16 +1,17 @@
 ---
-import Copyright from "@molecules/Copyright.astro";
-import Hero from "@organisms/Hero.astro";
-import Navigation from "@organisms/Navigation.astro";
-import SectionAboutJsConf from "@organisms/SectionAboutJsConf.astro";
-import SectionBackground from "@organisms/SectionBackground.astro";
-import SectionGallery from "@organisms/SectionGallery.astro";
-import SectionPolicyPrivacy from "@organisms/SectionPolicyPrivacy.astro";
-import SectionSponsors from "@organisms/SectionSponsors.astro";
-import SectionVideo from "@organisms/SectionVideo.astro";
+import Copyright from '@molecules/Copyright.astro';
+import Hero from '@organisms/Hero.astro';
+import Navigation from '@organisms/Navigation.astro';
+import SectionAboutJsConf from '@organisms/SectionAboutJsConf.astro';
+import SectionBackground from '@organisms/SectionBackground.astro';
+import SectionCommunityFriend from '@organisms/SectionCommunityFriend.astro';
+import SectionGallery from '@organisms/SectionGallery.astro';
+import SectionPolicyPrivacy from '@organisms/SectionPolicyPrivacy.astro';
+import SectionSponsors from '@organisms/SectionSponsors.astro';
+import SectionVideo from '@organisms/SectionVideo.astro';
 const link = {
-  href: "https:github.com/darioespinoza",
-  text: "Darío Espinoza.",
+    href: 'https:github.com/darioespinoza',
+    text: 'Darío Espinoza.',
 };
 const year = new Date().getFullYear();
 ---
@@ -23,9 +24,10 @@ const year = new Date().getFullYear();
 <SectionPolicyPrivacy />
 <SectionBackground />
 <SectionSponsors />
+<SectionCommunityFriend />
 
 <Copyright
-  link={link}
-  text={`@${year} desarrollado con cariño por`}
-  linkClass="text-xs text-primary/80 hover:text-primary/100 transition-colors duration-300"
+    link={link}
+    text={`@${year} desarrollado con cariño por`}
+    linkClass="text-xs text-primary/80 hover:text-primary/100 transition-colors duration-300"
 />
