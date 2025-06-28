@@ -312,26 +312,32 @@ body {
                 margin-top: 0;
             }
         }
-    }
 
-    @keyframes anchorsCta {
-        from {
-            position: fixed;
-            bottom  : 32px;
-            z-index : 1000;
+        @keyframes anchorsCta {
+            from {
+                position: fixed;
+                bottom  : 32px;
+                z-index : 1000;
+            }
+
+            to {
+                position: relative;
+            }
         }
 
-        to {
-            position: relative;
+        #anchors-cta {
+            --range-start: entry 0%;
+            /* --range-end  : contain calc(var(--offsetTop, 3100px) * 3.1); */
+            --range-end  : contain 11690px;
+
+            @media (640px <= width <= 1024px) {
+                --range-end  : contain 10690px;
+            }
+
+            animation         : anchorsCta both;
+            animation-timeline: scroll(block);
+            animation-range   : var(--range-start) var(--range-end);
         }
     }
 
-    #anchors-cta {
-        --range-start: entry 0%;
-        --range-end  : contain calc(var(--offsetTop, 3100px) * 3.1);
-
-        animation         : anchorsCta both;
-        animation-timeline: scroll(block);
-        animation-range   : var(--range-start) var(--range-end);
-    }
 }
