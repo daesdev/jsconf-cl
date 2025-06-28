@@ -1,0 +1,28 @@
+---
+import Card from '@molecules/Card.astro';
+interface Item {
+    href: string;
+    src: string;
+    alt: string;
+    title: string;
+}
+interface Props {
+    class?: string;
+    items: Array<Item>;
+}
+const { items, class: className } = Astro.props;
+---
+
+<div class=`grid grid-cols-2 md:grid-cols-3 gap-4 ${className ?? ''}`>
+    {
+        items.map((item) => (
+            <Card
+                href={item.href}
+                src={item.src}
+                alt={item.alt}
+                title={item.title}
+                class="@container aspect-[16/11.5]"
+            />
+        ))
+    }
+</div>

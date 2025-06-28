@@ -1,0 +1,73 @@
+---
+import Background from '@atoms/Background.astro';
+import HeadingPrincipal from '@atoms/HeadingPrincipal.astro';
+import Section from '@components/Section.astro';
+import ListCards from '@organisms/ListCards.astro';
+const sponsors = [
+    {
+        href: 'https://www.instagram.com/masmujeresux.cl',
+        src: '/images/communities/+mujeresux.webp',
+        alt: '+MujeresUX - Comunidad de mujeres en experiencia de usuario',
+        title: '+MujeresUX',
+    },
+    {
+        href: 'https://9punto5.cl',
+        src: '/images/communities/9p5.webp',
+        alt: '9Punto5 - Comunidad de tecnología y startups en Chile',
+        title: '9Punto5',
+    },
+    {
+        href: 'https://jschile.org',
+        src: '/images/communities/JSChile.webp',
+        alt: 'JavaScript Chile - Comunidad de desarrolladores JavaScript en Chile',
+        title: 'JavaScript Chile',
+    },
+    {
+        href: 'https://www.instagram.com/cloudclubchile',
+        src: '/images/communities/cloudclubchile.webp',
+        alt: 'Cloud Club Chile - Comunidad de tecnologías en la nube',
+        title: 'Cloud Club Chile',
+    },
+    {
+        href: 'https://communityos.io',
+        src: '/images/communities/community-os.webp',
+        alt: 'Community OS - Plataforma de gestión de comunidades',
+        title: 'Community OS',
+    },
+    {
+        href: 'https://pythonchile.cl',
+        src: '/images/communities/python.webp',
+        alt: 'Python Chile - Comunidad de desarrolladores Python en Chile',
+        title: 'Python Chile',
+    },
+    {
+        href: 'https://www.linkedin.com/company/uxcorprangel/',
+        src: '/images/communities/uxcorprangel.webp',
+        alt: 'UX Corp Rangel - Comunidad de experiencia de usuario',
+        title: 'UX Corp Rangel',
+    },
+    {
+        href: 'https://www.instagram.com/wtmchile',
+        src: '/images/communities/wtm-chile.webp',
+        alt: 'Women Techmakers Chile - Comunidad de mujeres en tecnología',
+        title: 'Women Techmakers Chile',
+    },
+];
+---
+
+<Section
+    class="[&]:px-10 py-10 relative mt-4 [&]:max-w-[1200px] border-[.5px] border-secondary/55 rounded-xl overflow-hidden"
+>
+    <Background
+        class="absolute inset-0 -z-[1] w-full h-full bg-gradient-to-br from-secondary/5 via-cyan-800/15 to-secondary/5 min-h-auto"
+    />
+    <HeadingPrincipal
+        class="leading-tight text-4xl text-white w-full mb-10 md:mb-14"
+    >
+        Comunidades amigas
+    </HeadingPrincipal>
+    <ListCards
+        items={sponsors}
+        class="[&]:md:grid-cols-4 [&>div]:hover:shadow-white/60"
+    />
+</Section>
