@@ -18,10 +18,12 @@ const anchorsCta = [
 ];
 ---
 
-<Section class="relative [&]:max-w-[1200px]">
+<Section
+    class="relative [&]:max-w-[1200px] border-[.5px] border-secondary/55 rounded-xl aspect-[1200/78]"
+>
     <slot name="backdrop">
         <Background
-            class="bg-gradient-to-bl from-secondary/5 via-primary/15 to-secondary/5 min-h-auto h-full [&]:w-full"
+            class="bg-gradient-to-bl from-secondary/5 via-primary/15 to-secondary/5 min-h-auto h-full [&]:w-full left-0"
         />
     </slot>
     <slot name="content">
