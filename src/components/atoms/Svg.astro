@@ -1,0 +1,28 @@
+---
+type Props = {
+    class?: string;
+    svg: 'Algolia' | 'Figma' | 'Google' | 'Midudev' | 'Platzi' | 'Rspack';
+    title?: string;
+};
+const { class: className, svg, title } = Astro.props;
+import Algolia from '@/svgs/brands/Algolia.svg';
+import Figma from '@/svgs/brands/Figma.svg';
+import Google from '@/svgs/brands/Google.svg';
+import Midudev from '@/svgs/brands/Midudev.svg';
+import Platzi from '@/svgs/brands/Platzi.svg';
+import Rspack from '@/svgs/brands/Rspack.svg';
+---
+
+{
+    (() => {
+        const icons = {
+            Algolia: <Algolia class={className} title={title} />,
+            Figma: <Figma class={className} title={title} />,
+            Google: <Google class={className} title={title} />,
+            Midudev: <Midudev class={className} title={title} />,
+            Platzi: <Platzi class={className} title={title} />,
+            Rspack: <Rspack class={className} title={title} />,
+        };
+        return icons[svg as keyof typeof icons] || '';
+    })()
+}

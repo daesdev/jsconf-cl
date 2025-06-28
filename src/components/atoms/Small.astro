@@ -1,7 +1,8 @@
 ---
-const { text } = Astro.props;
+const { text, class: className } = Astro.props;
 ---
 
-<small>
-  {text}
+<small class={className}>
+    <slot />
+    {text}
 </small>
