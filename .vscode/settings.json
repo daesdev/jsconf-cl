@@ -8,14 +8,25 @@
     ],
     "prettier.enable": true,
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "oxc.oxc-vscode",
     "prettier.singleQuote": true,
     "prettier.tabWidth": 4,
     "[astro]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "oxc.oxc-vscode"
     },
+    "oxc.lint.run": "onSave",
     "editor.codeActionsOnSave": {
-        "source.fixAll.stylelint": "always"
+        "source.fixAll.oxc": "always"
+        //"source.fixAll.stylelint": "always",
     },
-    "stylelint.validate": ["css", "scss"]
+    "stylelint.validate": ["css", "scss"],
+    // .vscode/settings.json
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.js$|\\.ts$|\\.astro$",
+                "cmd": "bun run lint"
+            }
+        ]
+    }
 }
