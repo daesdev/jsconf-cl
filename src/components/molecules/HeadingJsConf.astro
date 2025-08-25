@@ -1,28 +1,28 @@
 ---
-import SpanColorized from "@atoms/SpanColorized.astro";
-import ChileFlag from "@svgs/ChileFlag.svg";
-const { class: className, "aria-hidden": ariaHidden } = Astro.props;
-const ariaHidd = ariaHidden ?? "false";
+import SpanColorized from '@atoms/SpanColorized.astro';
+import ChileFlag from '@svgs/ChileFlag.svg';
+const { class: className, 'aria-hidden': ariaHidden } = Astro.props;
+const ariaHidd = ariaHidden ?? 'false';
 ---
 
 <h1
-  aria-hidden={ariaHidd}
-  class=`${className ?? 'text-6xl md:text-7xl'} font-bold text-white font-magra text-shadow-2xs text-shadow-primary/40`
+    aria-hidden={ariaHidd}
+    class=`${className ?? 'text-6xl md:text-7xl'} font-bold text-white font-magra text-shadow-2xs text-shadow-primary/40`
 >
-  <slot>
-    <SpanColorized class="text-8xl md:text-9xl" color="text-primary"
-      >Js</SpanColorized
-    ><SpanColorized class="text-7xl md:text-8xl" color="text-white/75"
-      >C</SpanColorized
-    >onf
-    <SpanColorized
-      class="flex justify-center relative font-bold text-8xl md:text-9xl bg-clip-text bg-gradient-to-tl from-white/5 to-white/20 text-shadow-none"
-      color="text-transparent"
-    >
-      Chile
-      <ChileFlag
-        class="size-4.5 md:size-5.5 lg:size-6 absolute top-2 md:top-3 right-[calc(50%_-33px)] md:right-[calc(50%_-42px)] lg:right-[calc(50%_-43px)]"
-      />
-    </SpanColorized>
-  </slot>
+    <slot>
+        <SpanColorized class="text-8xl md:text-9xl" color="text-primary"
+            >Js</SpanColorized
+        ><SpanColorized class="text-7xl md:text-8xl" color="text-white/75"
+            >C</SpanColorized
+        >onf
+        <SpanColorized
+            class="flex justify-center relative font-bold text-8xl md:text-9xl bg-clip-text bg-gradient-to-tl from-white/5 to-white/20 text-shadow-none"
+            color="text-transparent"
+        >
+            Chile
+            <ChileFlag
+                class="size-4.5 md:size-5.5 lg:size-6 absolute top-2 md:top-3 right-[calc(50%_-33px)] md:right-[calc(50%_-42px)] lg:right-[calc(50%_-43px)]"
+            />
+        </SpanColorized>
+    </slot>
 </h1>

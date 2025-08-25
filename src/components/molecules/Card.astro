@@ -1,13 +1,14 @@
 ---
 import AnchorWrapper from '@atoms/AnchorWrapper.astro';
-import Small from '@atoms/Small.astro';
 import Picture from '@atoms/Picture.astro';
+import Small from '@atoms/Small.astro';
 import Svg from '@atoms/Svg.astro';
 const { class: className, href, src, alt, title } = Astro.props;
 const defaultClass =
     'p-5 bg-transparent border-[.5px] rounded-3xl border-primary/25 bg-gradient-to-tl from-white/5 to-white/10 backdrop-blur-md flex flex-col justify-between items-center aspect-1/1 hover:shadow-xs hover:shadow-primary/50 transition-shadow duration-350 relative overflow-hidden';
 const classes = className ? ` ${className} ${defaultClass}` : defaultClass;
-const isPicture = src.endsWith('.webp') || src.endsWith('.png') || src.endsWith('.jpg');
+const isPicture =
+    src.endsWith('.webp') || src.endsWith('.png') || src.endsWith('.jpg');
 ---
 
 <div class={classes}>
@@ -16,16 +17,25 @@ const isPicture = src.endsWith('.webp') || src.endsWith('.png') || src.endsWith(
         class="flex flex-col justify-center items-center"
     >
         {
-        isPicture
-            ? (
-                <Picture principal={src} alt={alt} classWrapper="[&]:w-[50cqw] z-10"/>
-            ) : (
-                <Svg class="h-[50cqw] aspect-video mb-2 z-10" svg={src} title={alt} />
-                <Svg
-                    class="w-[100cqw] absolute blur-3xl opacity-50 z-0 select-none"
-                    svg={src}
-                    title={alt}
+            isPicture ? (
+                <Picture
+                    principal={src}
+                    alt={alt}
+                    classWrapper="[&]:w-[50cqw] z-10"
                 />
+            ) : (
+                <>
+                    <Svg
+                        class="h-[50cqw] aspect-video mb-2 z-10"
+                        svg={src}
+                        title={alt}
+                    />
+                    <Svg
+                        class="w-[100cqw] absolute blur-3xl opacity-50 z-0 select-none"
+                        svg={src}
+                        title={alt}
+                    />
+                </>
             )
         }
         <Small

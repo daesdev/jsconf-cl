@@ -1,25 +1,25 @@
 ---
-const { items, class: className = "", styles = "" } = Astro.props;
+const { items, class: className = '', styles = '' } = Astro.props;
 const classes = `flex flex-wrap gap-3 z-10 ${className}`.trim();
-import Badge from "@atoms/Badge.astro";
-import List from "@components/List.astro";
+import Badge from '@atoms/Badge.astro';
+import List from '@components/List.astro';
 ---
 
 <List class={classes} style={styles}>
-  <slot>
-    {
-      items.map((item, index) => (
-        <li>
-          <Badge
-            class="[&]:text-base border-primary/5 border-gradient [&]:rounded-lg [&]:font-light text-nowrap"
-            href={`https://x.com/hashtag/${item.replace("#", "")}?src=hashtag_click`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {item}
-          </Badge>
-        </li>
-      ))
-    }
-  </slot>
+    <slot>
+        {
+            items.map((item, index) => (
+                <li>
+                    <Badge
+                        class="[&]:text-base border-primary/5 border-gradient [&]:rounded-lg [&]:font-light text-nowrap"
+                        href={`https://x.com/hashtag/${item.replace('#', '')}?src=hashtag_click`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {item}
+                    </Badge>
+                </li>
+            ))
+        }
+    </slot>
 </List>

@@ -1,10 +1,10 @@
 ---
-const { class: className = "text-xl sm:text-2xl lg:text-3xl" } = Astro.props;
+const { class: className = 'text-xl sm:text-2xl lg:text-3xl' } = Astro.props;
 ---
 
 <h2
-  class=`${className} font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-300 via-pink-600 `
-  }
+    class=`${className} font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-300 via-pink-600 `
+    }
 >
-  <slot />
+    <slot />
 </h2>

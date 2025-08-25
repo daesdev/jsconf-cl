@@ -1,13 +1,13 @@
 ---
-import AnchorSample from "@atoms/AnchorSample.astro";
-import Small from "@atoms/Small.astro";
+import AnchorSample from '@atoms/AnchorSample.astro';
+import Small from '@atoms/Small.astro';
 interface Props {
-  link: {
-    href: string;
-    text: string;
-  };
-  text?: string;
-  linkClass?: string;
+    link: {
+        href: string;
+        text: string;
+    };
+    text?: string;
+    linkClass?: string;
 }
 const { link, text, linkClass } = Astro.props;
 const year = new Date().getFullYear();
@@ -15,6 +15,6 @@ const textSmall = text || `@${year} desarrollado con cariño por`;
 ---
 
 <div class="text-gray-400 w-full text-center block">
-  <Small text={textSmall} />
-  <AnchorSample href={link.href} text={link.text} class={linkClass} />
+    <Small text={textSmall} />
+    <AnchorSample href={link.href} text={link.text} class={linkClass} />
 </div>

@@ -1,85 +1,89 @@
 ---
 const { items, class: className } = Astro.props;
 const classes = className
-  ? `gallery ${className}`
-  : "gallery columns-2 gap-10 sm:columns-3 lg:columns-4 gap-[2cqw] *:mb-[2cqw] *:last:mb-0 wrapper-shadow-bottom".trim();
+    ? `gallery ${className}`
+    : 'gallery columns-2 gap-10 sm:columns-3 lg:columns-4 gap-[2cqw] *:mb-[2cqw] *:last:mb-0 wrapper-shadow-bottom'.trim();
 
 const galleryImages = items || [
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
-  "https://placehold.co/600x400",
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400',
+    'https://placehold.co/600x400',
 ];
-import List from "@components/List.astro";
-import Picture from "@atoms/Picture.astro";
+import List from '@components/List.astro';
+import Picture from '@atoms/Picture.astro';
 
 // Agrupar imágenes por nombre base y extensión
 interface ImageGroup {
-  principal?: string;
-  webp?: string;
-  avif?: string;
+    principal?: string;
+    webp?: string;
+    avif?: string;
 }
 
 const groupedImages: Record<string, ImageGroup> = galleryImages.reduce(
-  (acc, img) => {
-    const fileName = img.split("/").at(-1)?.split(".")[0] || "";
-    const ext = img.split(".").at(-1)?.toLowerCase() || "";
-    const principalExts = ["jpg", "jpeg", "png"];
-    if (!acc[fileName]) acc[fileName] = {};
-    if (principalExts.includes(ext)) acc[fileName].principal = img;
-    if (ext === "webp") acc[fileName].webp = img;
-    if (ext === "avif") acc[fileName].avif = img;
-    return acc;
-  },
-  {},
+    (acc, img) => {
+        const fileName = img.split('/').at(-1)?.split('.')[0] || '';
+        const ext = img.split('.').at(-1)?.toLowerCase() || '';
+        const principalExts = ['jpg', 'jpeg', 'png'];
+        if (!acc[fileName]) acc[fileName] = {};
+        if (principalExts.includes(ext)) acc[fileName].principal = img;
+        if (ext === 'webp') acc[fileName].webp = img;
+        if (ext === 'avif') acc[fileName].avif = img;
+        return acc;
+    },
+    {}
 );
 
 const imageGroups = Object.values(groupedImages);
 ---
 
 <List class={classes}>
-  <slot>
-    {
-      imageGroups.map((group, _index) => (
-        <li>
-          <Picture
-            classWrapper="block overflow-hidden rounded-lg hover:cursor-cell [&]:aspect-auto"
-            class="transition-transform duration-2000 ease-in-out item-hover:scale-95 item-hover:[&_img]:rounded-lg  item-hover:[&_img]:overflow-hidden"
-            webp={group.webp}
-            avif={group.avif}
-            principal={group.principal}
-            alt="Image from JSConf Chile"
-            width="600"
-            height="auto"
-            loading="lazy"
-          />
-        </li>
-      ))
-    }
-  </slot>
+    <slot>
+        {
+            imageGroups.map((group, _index) => (
+                <li>
+                    <Picture
+                        classWrapper="block overflow-hidden rounded-lg hover:cursor-cell [&]:aspect-auto"
+                        class="transition-transform duration-2000 ease-in-out item-hover:scale-95 item-hover:[&_img]:rounded-lg  item-hover:[&_img]:overflow-hidden"
+                        webp={group.webp}
+                        avif={group.avif}
+                        principal={group.principal}
+                        alt="Image from JSConf Chile"
+                        width="600"
+                        height="auto"
+                        loading="lazy"
+                    />
+                </li>
+            ))
+        }
+    </slot>
 </List>
 <script>
-  const endLoadDom = () => {
-    const $ = (selector: string) => document.querySelector(selector);
-    const gallery = $(".gallery");
-    if (!gallery) return;
-    const items = Array.from(gallery.children);
-    let initOffset = items.at(0)?.offsetTop || 0;
-    let heightPrevItem = 0;
-    items.forEach((item, index) => {
-      const nextOffset = items[index + 1]?.offsetTop || null;
-      if (nextOffset === initOffset) {
-        heightPrevItem += item[index - 1] ? item[index - 1].clientHeight : 0;
-        item.classList.add("aspect-square");
-        const height =
-          gallery.clientHeight - item.clientHeight - gallery.clientHeight;
-        item.setAttribute("style", `height: 100%`);
-      }
-      console.log(heightPrevItem);
-    });
-  };
-  document.addEventListener("DOMContentLoaded", endLoadDom);
-  window.addEventListener("resize", endLoadDom);
+    const endLoadDom = () => {
+        const $ = (selector: string) => document.querySelector(selector);
+        const gallery = $('.gallery');
+        if (!gallery) return;
+        const items = Array.from(gallery.children);
+        let initOffset = items.at(0)?.offsetTop || 0;
+        let heightPrevItem = 0;
+        items.forEach((item, index) => {
+            const nextOffset = items[index + 1]?.offsetTop || null;
+            if (nextOffset === initOffset) {
+                heightPrevItem += item[index - 1]
+                    ? item[index - 1].clientHeight
+                    : 0;
+                item.classList.add('aspect-square');
+                const height =
+                    gallery.clientHeight -
+                    item.clientHeight -
+                    gallery.clientHeight;
+                item.setAttribute('style', `height: 100%`);
+            }
+            console.log(heightPrevItem);
+        });
+    };
+    document.addEventListener('DOMContentLoaded', endLoadDom);
+    window.addEventListener('resize', endLoadDom);
 </script>
