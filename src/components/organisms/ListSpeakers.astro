@@ -13,7 +13,9 @@ interface Props {
 const { items, class: className } = Astro.props;
 ---
 
-<div class=`grid grid-cols-2 md:grid-cols-3 gap-4 ${className ?? ''}`>
+<div
+  class=`grid grid-cols-2 md:grid-cols-3 gap-4 justify-items-center ${className ?? ''}`
+>
   {
     items.map((item) => (
       <CardSpeaker

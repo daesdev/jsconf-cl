@@ -6,31 +6,29 @@ import HeadingSection from '@molecules/HeadSection.astro';
 ---
 
 <Section
-    class="py-20 flex flex-col gap-4 md:flex-row sm:gap-8 animate-fade-in-up animate-duration-[1200ms]"
+  class="py-20 flex flex-col gap-4 md:flex-row sm:gap-8 [&]:max-w-[1200px] animate-fade-in-up animate-duration-[1200ms]"
 >
-    <HeadingSection
-        class="max-w-[630px]"
-        title="¿Qué es JsConf Chile?"
-        subtitle="Se parte de algo grande"
-    >
-        <div class="mt-2 text-pretty" slot="content">
-            <p class="mb-2">
-                JSConf Chile no es solo una conferencia, es un punto de
-                encuentro donde la pasión por JavaScript se convierte en
-                innovación, las ideas encuentran su propósito y una comunidad
-                unida marca la diferencia. Un lugar donde todo comienza 🚀
-            </p>
-            <SpanColorized
-                >¿Estás listo para ser parte del cambio?</SpanColorized
-            >
-        </div>
-    </HeadingSection>
-    <Picture
-        classWrapper="self-center w-full max-w-[430px] lg:max-w-full lg:max-h-[300px] h-auto md:mt-12 lg:overflow-hidden lg:hover:scale-99 transition-transform duration-2000 ease-in-out lg:hover:cursor-cell group"
-        class="rounded-lg lg:object-center lg:object-cover lg:size-full lg:group-hover:object-[center_90%] transition-all duration-2500 ease-in-out"
-        webp="/jsconf/evento-2024-two-day.webp"
-        avif="/jsconf/evento-2024-two-day.avif"
-        principal="/jsconf/evento-2024-two-day.jpg"
-        alt="Imagen de la conferencia JsConf Chile 2024 día 2"
-    />
+  <HeadingSection
+    class="max-w-[630px]"
+    title="¿Qué es JsConf Chile?"
+    subtitle="Se parte de algo grande"
+  >
+    <div class="mt-2 text-pretty" slot="content">
+      <p class="mb-2">
+        JSConf Chile no es solo una conferencia, es un punto de encuentro donde
+        la pasión por JavaScript se convierte en innovación, las ideas
+        encuentran su propósito y una comunidad unida marca la diferencia. Un
+        lugar donde todo comienza 🚀
+      </p>
+      <SpanColorized>¿Estás listo para ser parte del cambio?</SpanColorized>
+    </div>
+  </HeadingSection>
+  <Picture
+    classWrapper="self-center w-full max-w-[430px] lg:max-w-full lg:max-h-[300px] h-auto md:mt-12 lg:overflow-hidden lg:hover:scale-99 transition-transform duration-2000 ease-in-out lg:hover:cursor-cell group"
+    class="rounded-lg lg:object-center lg:object-cover lg:size-full lg:group-hover:object-[center_90%] transition-all duration-2500 ease-in-out"
+    webp="/jsconf/evento-2024-two-day.webp"
+    avif="/jsconf/evento-2024-two-day.avif"
+    principal="/jsconf/evento-2024-two-day.jpg"
+    alt="Imagen de la conferencia JsConf Chile 2024 día 2"
+  />
 </Section>
