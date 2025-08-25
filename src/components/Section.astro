@@ -1,10 +1,11 @@
 ---
-const { class: className = '', style = '' } = Astro.props;
+const { class: className = '', style = '', id = '' } = Astro.props;
 ---
 
 <section
-    class=`${className} w-full px-2 md:px-4 max-w-7xl mx-auto`
-    style={style}
+  class=`${className} w-full px-2 md:px-4 max-w-7xl mx-auto`
+  style={style}
+  id={id}
 >
-    <slot />
+  <slot />
 </section>
