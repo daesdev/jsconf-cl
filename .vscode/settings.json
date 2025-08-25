@@ -1,32 +1,22 @@
 {
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "astro"
-    ],
-    "prettier.enable": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "oxc.oxc-vscode",
-    "prettier.singleQuote": true,
-    "prettier.tabWidth": 4,
-    "[astro]": {
-        "editor.defaultFormatter": "oxc.oxc-vscode"
-    },
-    "oxc.lint.run": "onSave",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.oxc": "always"
-        //"source.fixAll.stylelint": "always",
-    },
-    "stylelint.validate": ["css", "scss"],
-    // .vscode/settings.json
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                "match": "\\.js$|\\.ts$|\\.astro$",
-                "cmd": "bun run lint"
-            }
-        ]
-    }
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "astro"
+  ],
+  "prettier.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "oxc.oxc-vscode",
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "oxc.lint.run": "onSave",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "always"
+  }
 }
