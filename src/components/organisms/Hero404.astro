@@ -1,62 +1,69 @@
 ---
-import Background from "@atoms/Background.astro";
-import Button from "@atoms/Button.astro";
-import HeadingJsConf from "@molecules/HeadingJsConf.astro";
-import Chile from "@svgs/Chile.svg";
+import Background from '@atoms/Background.astro';
+import Button from '@atoms/Button.astro';
+import HeadingJsConf from '@molecules/HeadingJsConf.astro';
+import Chile from '@svgs/Chile.svg';
 ---
 
 <section
-  class="w-full relative z-10 bg-secondary/5 shadow-outline shadow-primary/15 rounded-xl overflow-hidden"
+    class="w-full relative z-10 bg-secondary/5 shadow-outline shadow-primary/15 rounded-xl overflow-hidden"
 >
-  <Background
-    class="bg-gradient-to-bl from-secondary/5 via-primary/15 to-secondary/5 w-dvw h-full"
-  />
-  <div class="relative container mx-auto max-w-[1200px]">
-    <div
-      class="grid place-content-center w-full h-dvh min-h-[800px] lg:max-h-[980px] z-10"
-    >
-      <section
-        class="flex flex-col lg:grid lg:grid-cols-[1.9fr_1fr] gap-10 items-center justify-items-center w-full min-w-[900px]"
-      >
-        <div class="lg:row-start-1 lg:col-span-full">
-          <HeadingJsConf class="text-6xl md:text-7xl" />
+    <Background
+        class="bg-gradient-to-bl from-secondary/5 via-primary/15 to-secondary/5 w-dvw h-full"
+    />
+    <div class="relative container mx-auto max-w-[1200px]">
+        <div
+            class="grid place-content-center w-full h-dvh min-h-[800px] lg:max-h-[980px] z-10"
+        >
+            <section
+                class="flex flex-col lg:grid lg:grid-cols-[1.9fr_1fr] gap-10 items-center justify-items-center w-full min-w-[900px]"
+            >
+                <div class="lg:row-start-1 lg:col-span-full">
+                    <HeadingJsConf class="text-6xl md:text-7xl" />
+                </div>
+                <div
+                    class="bg-clip-text bg-gradient-to-tl from-primary/5 via-primary/25 to-primary/50 text-transparent lg:row-start-2 text-4xl lg:text-8xl font-bod font-magra col-span-full justify-self-center text-shadow-2xs text-shadow-primary/20 animate-blurred-fade-in animate-duration-700"
+                >
+                    <div class="flex flex-col items-center gap-6">
+                        <span
+                            class="block text-center bg-clip-text text-transparent bg-gradient-to-bl from-teal-200 to-primary text-5xl md:text-6xl lg:text-9xl animate-pulse-fade-in"
+                            >404</span
+                        >
+                        <small
+                            class="text-base -mt-7 md:-mt-8 max-w-11/12 text-center text-balance"
+                            >El contenido que buscas no existe o ha sido
+                            eliminado.</small
+                        >
+                        <strong class="max-w-11/12 text-center text-balance">
+                            Vuelve a <span class="text-primary"
+                                >JSConf Chile</span
+                            >
+                        </strong>
+                        <Button
+                            href="/"
+                            text="¡Sí, regresemos!"
+                            type="anchor"
+                        />
+                    </div>
+                </div>
+                <img
+                    width="200"
+                    height="auto"
+                    src="/images/jsconf-cl.png"
+                    alt="js conf chile logo"
+                    class="row-span-full col-span-1 col-start-2 justify-self-end size-[150px] lg:size-[250px] opacity-9 lg:hover:cursor-cell lg:hover:scale-[1.1] lg:hover:opacity-85 transition-all duration-300 sm:mt-12 lg:mt-1/2 ml-30"
+                />
+            </section>
         </div>
         <div
-          class="bg-clip-text bg-gradient-to-tl from-primary/5 via-primary/25 to-primary/50 text-transparent lg:row-start-2 text-4xl lg:text-8xl font-bod font-magra col-span-full justify-self-center text-shadow-2xs text-shadow-primary/20 animate-blurred-fade-in animate-duration-700"
+            class="hidden md:flex absolute -top-[65%] lg:-top-[55%] -left-[200px] w-1/2 h-[3300px] -z-10 items-center justify-center overflow-hidden after:ml-[45%] lg:after:ml-10 after:-mt-[450px] after:content after:size-10 after:rounded-full after:bg-primary after:opacity-100 after:animate-pulse after:blur-2xl after:shadow-2xl after:shadow-primary"
         >
-          <div class="flex flex-col items-center gap-6">
-            <span
-              class="block text-center bg-clip-text text-transparent bg-gradient-to-bl from-teal-200 to-primary text-5xl md:text-6xl lg:text-9xl animate-pulse-fade-in"
-              >404</span
-            >
-            <small
-              class="text-base -mt-7 md:-mt-8 max-w-11/12 text-center text-balance"
-              >El contenido que buscas no existe o ha sido eliminado.</small
-            >
-            <strong class="max-w-11/12 text-center text-balance">
-              Vuelve a <span class="text-primary">JSConf Chile</span>
-            </strong>
-            <Button href="/" text="¡Sí, regresemos!" type="anchor" />
-          </div>
+            <Chile class="absolute top-0 left-0 h-full opacity-5" />
         </div>
-        <img
-          width="200"
-          height="auto"
-          src="/images/jsconf-cl.png"
-          alt="js conf chile logo"
-          class="row-span-full col-span-1 col-start-2 justify-self-end size-[150px] lg:size-[250px] opacity-9 lg:hover:cursor-cell lg:hover:scale-[1.1] lg:hover:opacity-85 transition-all duration-300 sm:mt-12 lg:mt-1/2 ml-30"
-        />
-      </section>
     </div>
-    <div
-      class="hidden md:flex absolute -top-[65%] lg:-top-[55%] -left-[200px] w-1/2 h-[3300px] -z-10 items-center justify-center overflow-hidden after:ml-[45%] lg:after:ml-10 after:-mt-[450px] after:content after:size-10 after:rounded-full after:bg-primary after:opacity-100 after:animate-pulse after:blur-2xl after:shadow-2xl after:shadow-primary"
-    >
-      <Chile class="absolute top-0 left-0 h-full opacity-5" />
-    </div>
-  </div>
 </section>
 
 <script>
-  import { Temporal } from "temporal-polyfill";
-  console.log(Temporal.Now.zonedDateTimeISO().toString());
+    import { Temporal } from 'temporal-polyfill';
+    console.log(Temporal.Now.zonedDateTimeISO().toString());
 </script>
