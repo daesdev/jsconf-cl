@@ -1,0 +1,40 @@
+---
+import Background from '@atoms/Background.astro';
+import HeadingPrincipal from '@atoms/HeadingPrincipal.astro';
+import Section from '@components/Section.astro';
+import ListSpeakers from '@organisms/ListSpeakers.astro';
+const sponsors = [
+  {
+    name: 'Sophie Bennet',
+    description: 'Product Designer who focuses on simplicity &n usability',
+    alt: 'Sophie Bennet - ui designer',
+    img: '/images/speaker-women-1.webp',
+  },
+  {
+    name: 'John Doe',
+    description: 'Senior Developer with a passion for open source',
+    alt: 'John Doe - senior developer',
+    img: '/images/speaker-men.webp',
+  },
+  {
+    name: 'Alice Johnson',
+    description: 'Backend Developer with a knack for APIs',
+    alt: 'Alice Johnson - backend developer',
+    img: '/images/speaker-women-2.webp',
+  },
+];
+---
+
+<Section
+  class="[&]:px-10 py-10 relative mt-4 [&]:max-w-[1200px] border-[.5px] border-secondary/55 rounded-xl overflow-hidden"
+>
+  <Background
+    class="absolute inset-0 -z-[1] w-full h-full bg-gradient-to-bl from-secondary/5 via-cyan-800/15 to-secondary/5 min-h-auto"
+  />
+  <HeadingPrincipal
+    class="leading-tight text-4xl text-white w-full mb-10 md:mb-14"
+  >
+    Speakers
+  </HeadingPrincipal>
+  <ListSpeakers items={sponsors} />
+</Section>

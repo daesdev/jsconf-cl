@@ -1,0 +1,28 @@
+---
+import CardSpeaker from '@molecules/CardSpeaker.astro';
+interface Item {
+  name: string;
+  description: string;
+  alt: string;
+  img: string;
+}
+interface Props {
+  class?: string;
+  items: Array<Item>;
+}
+const { items, class: className } = Astro.props;
+---
+
+<div class=`grid grid-cols-2 md:grid-cols-3 gap-4 ${className ?? ''}`>
+  {
+    items.map((item) => (
+      <CardSpeaker
+        name={item.name}
+        description={item.description}
+        alt={item.alt}
+        img={item.img}
+        class="@container aspect-[16/11.5]"
+      />
+    ))
+  }
+</div>
