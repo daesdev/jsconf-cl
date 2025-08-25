@@ -1,13 +1,12 @@
-@import "tailwindcss";
-@import "./fonts.css";
+@import 'tailwindcss';
+@import './fonts.css';
 
 @theme {
-    --color-primary  : #f0db4f;
+    --color-primary: #f0db4f;
     --color-secondary: #323330;
-    --font-fallback  :
-        system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
-        "Helvetica Neue", arial, sans-serif;
-    --font-magra: "Magra", sans-serif;
+    --font-fallback: system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI',
+        roboto, 'Helvetica Neue', arial, sans-serif;
+    --font-magra: 'Magra', sans-serif;
 }
 
 @plugin "@midudev/tailwind-animations";
@@ -23,22 +22,21 @@
 }
 
 html {
-    font-family            : Magra, var(--font-fallback);
-    -webkit-font-smoothing : antialiased;
+    font-family: Magra, var(--font-fallback);
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering         : optimizelegibility;
-    overflow-x             : hidden;
-    scroll-behavior        : smooth;
+    text-rendering: optimizelegibility;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
     @apply bg-black;
-
     color: var(--color-primary);
 }
 
 .drop-shadow-plus {
-    filter    : drop-shadow(0 0 10px #ffd70080);
+    filter: drop-shadow(0 0 10px #ffd70080);
     mask-image: linear-gradient(to bottom, #000 80%, transparent 95%);
 
     @media (width >=640px) {
@@ -47,41 +45,42 @@ body {
 }
 
 .wrapper-shadow-bottom {
-    filter    : drop-shadow(0 0 10px #000);
+    filter: drop-shadow(0 0 10px #000);
     mask-image: linear-gradient(to bottom, #000 80%, transparent 95%);
 }
 
 .shadow-badges {
     position: relative;
-    z-index : 1;
+    z-index: 1;
 
     &::after {
-        content   : "";
-        position  : absolute;
-        width     : 10%;
-        height    : 100%;
-        top       : 0;
-        right     : 0;
-        z-index   : 21;
+        content: '';
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: 21;
         background: linear-gradient(to right, transparent 70%, #000);
     }
 
     &::before {
-        content   : "";
-        position  : absolute;
-        width     : 10%;
-        height    : 100%;
-        top       : 0;
-        left      : 0;
-        z-index   : 21;
+        content: '';
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 21;
         background: linear-gradient(to left, transparent 70%, #000);
     }
 }
 
 .animation-badges {
-    position : relative;
-    z-index  : 20;
-    animation: slide-scroll-x-badges var(--duration, 20s) linear infinite alternate;
+    position: relative;
+    z-index: 20;
+    animation: slide-scroll-x-badges var(--duration, 20s) linear infinite
+        alternate;
 
     &:hover {
         animation-play-state: paused;
@@ -89,40 +88,46 @@ body {
 }
 
 .border-gradient {
-    position  : relative;
+    position: relative;
     background: linear-gradient(to top right, #f0db4f, #7dbd6b);
     transition: all 0.3s ease-in-out;
-    z-index   : 1;
+    z-index: 1;
 
     &:hover {
-        scale    : 0.97;
+        scale: 0.97;
         transform: scale(0.97);
 
         &::after {
-            inset     : -2% 0 0 -2%;
-            background: linear-gradient(-45deg, #f0db4f, #e4d04c, #bbab44, #ae9e36df);
+            inset: -2% 0 0 -2%;
+            background: linear-gradient(
+                -45deg,
+                #f0db4f,
+                #e4d04c,
+                #bbab44,
+                #ae9e36df
+            );
         }
     }
 
     &::after {
-        content      : "";
-        position     : absolute;
-        width        : 100%;
-        height       : 100%;
-        inset        : 0;
-        z-index      : -2;
-        filter       : blur(5px);
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        z-index: -2;
+        filter: blur(5px);
         border-radius: 0.5rem;
-        transition   : all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
     }
 
     &::before {
-        content      : "";
-        position     : absolute;
-        width        : 100%;
-        height       : 100%;
-        inset        : 0;
-        z-index      : -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        z-index: -1;
         border-radius: 0.5rem;
 
         @apply bg-black;
@@ -131,10 +136,10 @@ body {
 
 .sticky-heading {
     position: sticky;
-    top     : 0.25rem;
-    z-index : 1000;
+    top: 0.25rem;
+    z-index: 1000;
 
-    ~section::first-child {
+    ~ section::first-child {
         margin-top: calc(-1 * var(--sticky-heading-height, 70px));
     }
 }
@@ -154,45 +159,45 @@ body {
         @keyframes sticky-heading {
             from {
                 visibility: hidden;
-                position  : sticky;
-                top       : calc(-1 * var(--sticky-heading-height, 70px));
+                position: sticky;
+                top: calc(-1 * var(--sticky-heading-height, 70px));
                 margin-top: calc(-1 * var(--sticky-heading-height, 70px));
-                z-index   : -1;
+                z-index: -1;
             }
 
             to {
                 visibility: visible;
-                top       : 0.25rem;
+                top: 0.25rem;
                 margin-top: 0.25rem;
-                z-index   : 99;
+                z-index: 99;
             }
         }
 
         /* YTIMG FRAME */
         @keyframes ytimg-title {
             0% {
-                display          : inline-block;
-                margin-top       : -20px;
-                line-height      : 1.1;
-                align-self       : start;
-                font-size        : calc(var(--font-size) + (100vw / 30));
-                opacity          : 1;
-                background-size  : calc(100% + 200px);
+                display: inline-block;
+                margin-top: -20px;
+                line-height: 1.1;
+                align-self: start;
+                font-size: calc(var(--font-size) + (100vw / 30));
+                opacity: 1;
+                background-size: calc(100% + 200px);
                 background-repeat: no-repeat;
-                z-index          : 10;
+                z-index: 10;
             }
 
             65% {
-                margin-top     : 0;
-                opacity        : 1;
+                margin-top: 0;
+                opacity: 1;
                 background-size: calc(100% + 100px);
             }
 
             100% {
-                font-size        : calc(var(--font-size) + (100vw / 7));
-                opacity          : 0;
-                background-size  : 1100px;
-                z-index          : -1;
+                font-size: calc(var(--font-size) + (100vw / 7));
+                opacity: 0;
+                background-size: 1100px;
+                z-index: -1;
                 background-repeat: no-repeat;
             }
         }
@@ -208,7 +213,7 @@ body {
             }
 
             40% {
-                opacity   : 0.07;
+                opacity: 0.07;
                 visibility: visible;
             }
 
@@ -217,8 +222,8 @@ body {
             }
 
             100% {
-                z-index   : 1;
-                opacity   : 1;
+                z-index: 1;
+                opacity: 1;
                 visibility: visible;
             }
         }
@@ -226,14 +231,14 @@ body {
         @keyframes lite-youtube {
             from {
                 visibility: hidden;
-                z-index   : -1;
-                opacity   : 0;
+                z-index: -1;
+                opacity: 0;
             }
 
             to {
                 visibility: visible;
-                opacity   : 1;
-                z-index   : 99;
+                opacity: 1;
+                z-index: 99;
             }
         }
 
@@ -241,47 +246,47 @@ body {
             display: inline-block;
 
             --range-start: entry 0;
-            --range-end  : cover 55%;
+            --range-end: cover 55%;
 
-            view-timeline-name : --ytimg;
-            view-timeline-axis : block;
-            animation-timeline : --ytimg;
-            animation-name     : ytimg-title;
-            animation-range    : var(--range-start) var(--range-end);
+            view-timeline-name: --ytimg;
+            view-timeline-axis: block;
+            animation-timeline: --ytimg;
+            animation-name: ytimg-title;
+            animation-range: var(--range-start) var(--range-end);
             animation-fill-mode: both;
-            transition         : visibility 0.5s linear ease-in-out;
+            transition: visibility 0.5s linear ease-in-out;
 
             &:has(~ lite-youtube iframe) {
                 visibility: hidden !important;
                 transition: visibility 0.5s linear ease-in-out;
             }
 
-            &~picture {
+            & ~ picture {
                 --range-start: entry 0;
-                --range-end  : cover 90%;
+                --range-end: cover 90%;
 
-                visibility         : hidden;
-                view-timeline-name : --ytimg-img;
-                view-timeline-axis : block;
-                animation-name     : ytimg-img;
-                animation-timeline : --ytimg-img;
-                animation-range    : var(--range-start) var(--range-end);
+                visibility: hidden;
+                view-timeline-name: --ytimg-img;
+                view-timeline-axis: block;
+                animation-name: ytimg-img;
+                animation-timeline: --ytimg-img;
+                animation-range: var(--range-start) var(--range-end);
                 animation-fill-mode: both;
-                transition         : visibility 0.5s linear ease-in-out;
+                transition: visibility 0.5s linear ease-in-out;
 
-                &~lite-youtube {
+                & ~ lite-youtube {
                     &:not(:has(iframe)) {
-                        z-index   : -1;
+                        z-index: -1;
                         visibility: hidden;
 
                         --range-start: entry 40%;
-                        --range-end  : cover 75%;
+                        --range-end: cover 75%;
 
-                        view-timeline-name : --lite-youtube;
-                        view-timeline-axis : block;
-                        animation-name     : lite-youtube;
-                        animation-timeline : --lite-youtube;
-                        animation-range    : var(--range-start) var(--range-end);
+                        view-timeline-name: --lite-youtube;
+                        view-timeline-axis: block;
+                        animation-name: lite-youtube;
+                        animation-timeline: --lite-youtube;
+                        animation-range: var(--range-start) var(--range-end);
                         animation-fill-mode: both;
                     }
 
@@ -300,15 +305,15 @@ body {
 
         .sticky-heading {
             --range-start: 350px;
-            --range-end  : 550px;
+            --range-end: 550px;
 
-            animation-name     : sticky-heading;
-            animation-timeline : scroll(block);
-            animation-range    : var(--range-start) var(--range-end);
+            animation-name: sticky-heading;
+            animation-timeline: scroll(block);
+            animation-range: var(--range-start) var(--range-end);
             animation-fill-mode: backwards;
-            animation-duration : 0.75s;
+            animation-duration: 0.75s;
 
-            ~section::first-child {
+            ~ section::first-child {
                 margin-top: 0;
             }
         }
@@ -316,8 +321,8 @@ body {
         @keyframes anchorsCta {
             from {
                 position: fixed;
-                bottom  : 32px;
-                z-index : 1000;
+                bottom: 32px;
+                z-index: 1000;
             }
 
             to {
@@ -328,16 +333,15 @@ body {
         #anchors-cta {
             --range-start: entry 0%;
             /* --range-end  : contain calc(var(--offsetTop, 3100px) * 3.1); */
-            --range-end  : contain 11690px;
+            --range-end: contain 11690px;
 
             @media (640px <= width <= 1024px) {
-                --range-end  : contain 10690px;
+                --range-end: contain 10690px;
             }
 
-            animation         : anchorsCta both;
+            animation: anchorsCta both;
             animation-timeline: scroll(block);
-            animation-range   : var(--range-start) var(--range-end);
+            animation-range: var(--range-start) var(--range-end);
         }
     }
-
 }
