@@ -1,0 +1,23 @@
+{
+    "$schema": "./node_modules/oxlint/configuration_schema.json",
+    "plugins": ["typescript", "react", "unicorn", "oxc"],
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "rules": {
+        "recommended": true,
+        "no-alert": "error",
+        "eqeqeq": "warn",
+        "react/self-closing-comp": ["error", { "html": false }]
+    },
+    "ignorePatterns": ["dist/", "node_modules/"],
+    "overrides": [
+        {
+            "files": ["*.test.ts", "*.spec.ts", "*.astro"],
+            "rules": {
+                "@typescript-eslint/no-explicit-any": "off"
+            }
+        }
+    ]
+}
